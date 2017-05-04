@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   end
 
   def add
-    params
-    redirect_to cart_path
+    cart << params[:product]
+    redirect_to '/'
   end
 end

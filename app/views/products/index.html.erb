@@ -1,3 +1,12 @@
-<% session[:cart].each do |item| %>
-  <%= item %>
+Items:<br/>
+<% if !!session[:cart] %>
+  <% session[:cart].each do |item| %>
+    <%= item %>
+  <% end %>
+<% end %>
+
+Add an item:<br/>
+<%= form_tag cart_path do %>
+  <%= text_field_tag :product %>
+  <%= submit_tag "add to cart"%>
 <% end %>
